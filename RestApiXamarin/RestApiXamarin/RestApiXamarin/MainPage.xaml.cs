@@ -38,9 +38,13 @@ namespace RestApiXamarin
             var client = new HttpClient();
             HttpResponseMessage response = await client.SendAsync(request);
 
+            // Chequear si da una respuesta.
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string content = await response.Content.ReadAsStringAsync();
+                var resultado = JsonConvert.DeserializeObject<List<DemoAPI>>(content);
+
+                ListDemo.ItemsSource = resultado;
             }
         }
     }
