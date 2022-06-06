@@ -26,6 +26,8 @@ namespace RestApiXamarin
             public string body { get; set; }
         }
 
+        // API REST.
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             // Solicitud.
